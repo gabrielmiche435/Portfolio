@@ -1,0 +1,897 @@
+/* === FUENTE BASE Y FONDO === */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #111;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* === HERO === */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: url('img/portada.jpg') center/cover no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+  gap: 80px;
+  height: 100vh;
+}
+
+/* === TEXTO PRINCIPAL === */
+.text-section {
+  flex: 1;
+  text-align: right;
+  padding-right: 40px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  position: relative;
+  left: -150px;
+  top: 10px;
+}
+
+.divider {
+  width: 80%;
+  height: 3px;
+  background-color: #fff;
+  margin: 0 0 1.5rem auto;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
+  max-width: 340px;
+  margin-left: auto;
+  text-align: right;
+}
+
+/* === MENÚ PRINCIPAL === */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-gap: 20px;
+  justify-content: start;
+}
+
+.menu-box {
+  border: 1px solid #999;
+  padding: 30px 10px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-box:hover {
+  background-color: #333;
+  transform: translateY(-5px);
+}
+
+.menu-box i {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-box:hover i {
+  transform: scale(1.15);
+  color: #ccc;
+}
+
+.menu-box span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* === FOOTER === */
+.footer {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+  z-index: 2;
+}
+
+/* === ANIMACIONES DE ENTRADA === */
+.text-section, .menu-box {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.menu-box:nth-child(1) { animation-delay: 0.3s; }
+.menu-box:nth-child(2) { animation-delay: 0.5s; }
+.menu-box:nth-child(3) { animation-delay: 0.7s; }
+.menu-box:nth-child(4) { animation-delay: 0.9s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+    height: auto;
+    padding: 60px 0;
+  }
+
+  .text-section { text-align: center; padding: 0; }
+  .title { left: 0; top: 0; }
+  .divider { margin: 0 auto 1.5rem; }
+  .menu { justify-content: center; }
+  .footer { position: relative; margin-top: 60px; }
+}
+
+/* === MODALES GENERALES === */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.4s ease;
+}
+
+.modal.show {
+  display: flex;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.modal-content {
+  background: #1c1c1c;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.4s ease forwards;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.close-modal:hover { transform: scale(1.2); }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+/* === MODAL SOBRE MÍ === */
+.modal-content.about-modal {
+  max-width: 900px;
+  width: 95%;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.about-container {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  margin-top: 18px;
+  flex-wrap: nowrap;
+}
+
+.about-image {
+  flex: 0 0 200px;
+  max-width: 200px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.about-text { flex: 1 1 auto; }
+.about-text p {
+  color: #ccc;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+  font-size: 0.96rem;
+}
+
+@media (max-width: 768px) {
+  .about-container { flex-direction: column; align-items: center; text-align: center; }
+  .about-image { max-width: 160px; margin-bottom: 12px; }
+}
+
+/* === MODAL PROYECTOS === */
+.proyectos-modal {
+  max-width: 1000px;
+  text-align: left;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.projects-section {
+  margin-bottom: 40px;
+}
+
+.projects-section h3 {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.project-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* === ÍTEM DE PROYECTO === */
+.project-item {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-4px);
+}
+
+.project-item img {
+  width: 100%;
+  height: 280px;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-item img:hover {
+  transform: scale(1.05);
+}
+
+.project-item p {
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.project-item .caption {
+  color: #bcbcbc;
+  font-size: 0.9rem;
+}
+
+/* --- Bloque Señalética (alineación normal) --- */
+.bloque-senaletica {
+  order: unset;
+  align-self: auto;
+  flex-basis: auto;
+  margin-top: 0;
+}
+
+
+.bloque-senaletica img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* === BOTÓN VOLVER === */
+.volver {
+  display: inline-block;
+  margin: 20px 0;
+  color: #9b59b6;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.volver:hover {
+  color: #ffffff;
+}
+
+/* === PÁGINAS DE PROYECTO === */
+.project-page {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.project-page h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.project-page p {
+  color: #ccc;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.project-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-gallery img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.project-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* --- Corrección de cuadrícula de proyectos --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-item {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.project-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.project-item:hover {
+  transform: scale(1.03);
+}
+
+.project-item p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* --- Texto global en blanco --- */
+body, 
+h1, h2, h3, h4, h5, h6, 
+p, 
+span, 
+a, 
+button {
+  color: #fff !important;
+}
+
+a {
+  text-decoration: none;
+  color: #fff !important;
+}
+
+a:hover {
+  color: #ddd !important;
+}
+
+/* === Botón "X" animado universal === */
+.close-x {
+  position: fixed;
+  top: 25px;
+  right: 30px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeInX 0.5s ease forwards;
+}
+
+.close-x span {
+  position: absolute;
+  width: 28px;
+  height: 2.5px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.close-x span:first-child {
+  transform: rotate(45deg);
+}
+
+.close-x span:last-child {
+  transform: rotate(-45deg);
+}
+
+.close-x:hover span:first-child {
+  transform: rotate(135deg);
+  background: #ff6b6b;
+}
+
+.close-x:hover span:last-child {
+  transform: rotate(-135deg);
+  background: #ff6b6b;
+}
+
+@keyframes fadeInX {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .close-x {
+    top: 18px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .close-x span {
+    width: 22px;
+  }
+}
+
+/* =============================
+   MODAL DE IMÁGENES AMPLIADAS
+============================= */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.image-modal-content {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  object-fit: contain;
+  animation: zoomIn 0.4s ease;
+}
+
+.close-image {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 1001;
+}
+
+.close-image:hover {
+  color: #ff6f61;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Galería general dentro de subpáginas */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* --- Modal de imágenes --- */
+.modal-img {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content-img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: zoomIn 0.4s ease;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ---- Secciones de proyectos ---- */
+.project-section {
+  margin-bottom: 4rem;
+}
+
+.project-section h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-left: 4px solid #fff;
+  padding-left: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-bottom: 1rem;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* descripción */
+.project-desc {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 900px;
+  margin-top: 0.5rem;
+  opacity: 1;
+}
+
+/* --- SECCIÓN PERSONAJE Y PÓSTERS --- */
+.poster-section .project-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.poster-section .project-gallery img {
+  width: 220px !important;
+  height: 320px !important;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster-section .project-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255,255,255,0.2);
+}
+
+.project-section h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.project-section .project-desc {
+  text-align: center;
+  color: #ccc;
+  font-size: 1rem;
+  max-width: 650px;
+  margin: 0.5rem auto 2rem;
+  line-height: 1.4;
+}
+/* === FIX GLOBAL: IMÁGENES OPACAS / FILTROS RAROS === */
+img {
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  box-shadow: none;
+}
+/* FIX SOLO PARA TESTEAR: fuerza que NO tengan opacidad */
+.project-gallery img {
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+/* === RESTAURAR HOVER DE DESCRIPCIONES === */
+.project-section .project-desc {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+/* Al pasar sobre el bloque: mostrar descripción */
+.project-section:hover .project-desc {
+    opacity: 1;
+    max-height: 500px;
+}
+
+/* Si trabajás con ítems individuales dentro de la galería */
+.project-gallery:hover + .project-desc {
+    opacity: 1;
+    max-height: 500px;
+}
+/* ------------------------------------------------------------
+   ESTILO PROFESIONAL PARA LA PÁGINA DE ILUSTRACIÓN
+   (No reemplaza nada, solo agrega y mejora la presentación)
+-------------------------------------------------------------*/
+
+/* --------- TITULO PRINCIPAL --------- */
+.subpage-container h1 {
+  font-size: 3.2rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.subpage-desc {
+  text-align: center;
+  font-size: 1.2rem;
+  opacity: 0.85;
+  margin-bottom: 3rem;
+}
+
+/* --------- SECCIONES (H2) --------- */
+.project-section h2 {
+  font-size: 2rem;
+  margin: 2.8rem 0 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 8px;
+}
+
+/* --------- BLOQUES DE PROYECTO --------- */
+.project-section {
+  margin-bottom: 3.5rem;
+}
+
+/* --------- GALERÍA --------- */
+.project-gallery {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-bottom: 1.3rem;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: zoom-in;
+}
+
+/* Hover suave */
+.project-gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.25);
+}
+
+/* --------- DESCRIPCIÓN --------- */
+.project-desc {
+  font-size: 1rem;
+  line-height: 1.55;
+  opacity: 0.9;
+  max-width: 900px;
+}
+
+/* --------- MODAL --------- */
+.modal-img img.modal-content-img {
+  max-height: 85vh;
+  max-width: 90vw;
+  border-radius: 10px;
+}
+
+/* --------- ESPACIADO ENTRE BLOQUES --------- */
+.poster-section {
+  margin-top: 4rem;
+}
+
+/* --------- Texto opcional bajo imágenes --------- */
+.caption {
+  text-align: center;
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+/* --- LIMITAR LA ALTURA DEL CUADRO DEL VINILO PARA QUE NO SE ESTIRE EL AZUL --- */
+
+.project-section:first-of-type .project-gallery {
+  grid-auto-rows: 220px;  /* altura uniforme como los otros bloques */
+}
+
+/* las imágenes del vinilo respetan esa altura y no se pasan */
+.project-section:first-of-type .project-gallery img {
+  height: 300px;          /* límite de altura */
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+/* --- Ajustar tamaño solo en la sección "La Hoguera" --- */
+.project-section:last-of-type .project-gallery img {
+  width: 220px;           /* mismo tamaño que las otras */
+  height: 300px;          /* cuadrado uniforme */
+  object-fit: cover;      /* recorta sin deformar */
+  border-radius: 12px;
+}
+/* Bajar solo el texto del primer bloque (Vinilo) */
+.project-section:first-of-type .project-desc {
+  margin-top: 100px;   /* Ajustá el valor si querés más o menos espacio */
+}
+.project-item img {
+  width: 100%;
+  height: 230px; /* Ajustás según prefieras */
+  object-fit: cover; /* Recorta para que quede cuadrada y prolija */
+  border-radius: 16px;
+}
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  
+  height: 350px; /* 🔹 Ajusta la altura uniforme */
+}
+
+.project-item img {
+  width: 100%;
+  height: 230px;     /* 🔹 Fuerza misma altura de imágenes */
+  object-fit: cover; /* 🔹 Evita deformaciones */
+  border-radius: 16px;
+}
+.carousel-track img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+/* === GALERÍA DENTRO DEL MODAL === */
+.galeria-modal {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Grid de 2 columnas (ideal para verticales) */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Cada item mantiene proporción */
+.galeria-item {
+  width: 100%;
+  height: 340px; /* Ajustá según lo alto que quieras las imágenes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Las imágenes NO se recortan y NO se deforman */
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  border-radius: 8px;
+}
+/* === FIX: Centrar y alinear SOLO la sección de Tapas de Libros === */
+
+/* Selecciona la última sección (Tapas de libros) */
+.project-section:last-of-type .project-gallery {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start;
+  gap: 40px;              /* separación pareja */
+  flex-wrap: nowrap;      /* evita que se vayan a distintas filas */
+}
+
+/* Tamaño fijo para verticales */
+.project-section:last-of-type .project-gallery img {
+  width: 240px !important;
+  height: 360px !important;   /* proporción vertical consistente */
+  object-fit: cover;
+  border-radius: 12px;
+}

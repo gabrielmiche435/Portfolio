@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Gabriel Pérez</title>
+
+  <!-- Fuente y CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="text-section">
+        <h1 class="title">PORTFOLIO</h1>
+        <div class="divider"></div>
+        <p class="subtitle">
+          Diseñador Gráfico · Creatividad, precisión y estrategia visual en cada proyecto.
+        </p>
+      </div>
+
+      <div class="menu">
+        <div class="menu-box" data-modal="proyectos">
+          <i class="fas fa-briefcase"></i>
+          <span>Proyectos</span>
+        </div>
+        <div class="menu-box" data-modal="sobre-mi">
+          <i class="fas fa-user"></i>
+          <span>Sobre mí</span>
+        </div>
+        <div class="menu-box" data-modal="galeria">
+          <i class="fas fa-image"></i>
+          <span>Galería</span>
+        </div>
+        <div class="menu-box" data-modal="contacto">
+          <i class="fas fa-envelope"></i>
+          <span>Contacto</span>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      Gabriel Pérez · Contacto
+    </footer>
+  </section>
+
+  <!-- ✅ MODAL PROYECTOS -->
+  <div class="modal" id="modal-proyectos">
+    <div class="modal-content proyectos-modal">
+      <button class="close-modal" aria-label="Cerrar">&times;</button>
+      <h2>Proyectos</h2>
+
+      <div class="project-grid">
+        <!-- Ilustración -->
+        <div class="project-item">
+          <a href="ilustracion.html">
+            <img src="img/kind of blu tapa.jpg" alt="Ilustración">
+            <p>Ilustración</p>
+          </a>
+        </div>
+
+        <!-- Identidad -->
+        <div class="project-item">
+          <a href="identidad.html">
+            <img src="img/logos blanco y negro.jpg" alt="Diseño de Identidad">
+            <p>Diseño de Identidad</p>
+          </a>
+        </div>
+
+        <!-- Envases -->
+        <div class="project-item">
+          <a href="envases.html">
+            <img src="img/Cereales 1.jpg" alt="Diseño de Envases">
+            <p>Diseño de Envases</p>
+          </a>
+        </div>
+
+        <!-- Señalética -->
+        <div class="project-item bloque-senaletica">
+          <a href="senaletica.html">
+            <img src="img/señaletica.jpg" alt="Señalética">
+            <p>Señalética</p>
+          </a>
+          
+        </div>
+        <!-- Afiches -->
+<div class="project-item">
+  <a href="afiches.html">
+    <img src="img-carteles/alemania.jpg" alt="Proyecto Afiches">
+    <p>Afiches</p>
+  </a>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ MODAL SOBRE MÍ -->
+ <div class="modal" id="modal-sobre-mi">
+  <div class="modal-content about-modal">
+    <button class="close-modal" aria-label="Cerrar">&times;</button>
+    <h2>Sobre mí</h2>
+
+    <div class="about-container">
+      <div class="about-image">
+        <img src="img/avatar.jpg" alt="Gabriel Pérez - avatar">
+      </div>
+
+      <div class="about-text">
+        <p><strong>Mi nombre es Gabriel Pérez</strong>, Soy Diseñador Gráfico. A lo largo de mi formación descubrí que el diseño no solo es una herramienta visual, sino una forma de comunicar ideas, emociones y valores de manera clara y creativa.</p>
+
+        <p>Me apasiona especialmente la ilustración y el diseño de identidad, áreas donde puedo combinar lo conceptual con lo expresivo. Durante estos dos años he desarrollado trabajos con distintos estilos, manteniendo un enfoque muy ilustrativo que caracteriza mi forma de diseñar.</p>
+
+        <p>Domino herramientas como <strong>Photoshop</strong> e <strong>Illustrator</strong>. Busco que cada proyecto transmita algo auténtico y cuente una historia más allá de la estética.</p>
+
+        <p>Mi objetivo como diseñador es seguir creciendo, perfeccionando mi estilo y aportando creatividad en cada nuevo desafío.</p>
+
+        <!-- 🔥 MISIÓN -->
+        <h3 class="sub-title">Misión</h3>
+        <p>
+          Crear diseños que comuniquen de forma auténtica, combinando ilustración, identidad visual y pensamiento conceptual. Mi misión es transmitir ideas con claridad y estética, aportando creatividad y propósito a cada proyecto.
+        </p>
+
+        <!-- 🔥 VISIÓN -->
+        <h3 class="sub-title">Visión</h3>
+        <p>
+          Convertirme en un diseñador integral capaz de desarrollar identidades sólidas y proyectos ilustrativos de alto impacto. Aspiro a seguir creciendo profesionalmente y construir un estilo propio que se destaque por su coherencia, sensibilidad visual y fuerza narrativa.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- ✅ MODAL GALERÍA -->
+<div class="modal" id="modal-galeria">
+  <div class="modal-content galeria-modal">
+    <button class="close-modal" aria-label="Cerrar">&times;</button>
+    <h2>Galería</h2>
+    <p>Explorá mis ilustraciones, bocetos y diseños experimentales.</p>
+
+    <div class="galeria-grid">
+      <div class="galeria-item">
+        <img src="img-galeria/CARTEL CARACOL NINJA.jpg" alt="Imagen 1">
+      </div>
+      <div class="galeria-item">
+        <img src="img-galeria/Cartel de juego (1).jpg" alt="Imagen 2">
+      </div>
+      <div class="galeria-item">
+        <img src="img-galeria/hoguera.jpg" alt="Imagen 3">
+      </div>
+      <div class="galeria-item">
+        <img src="img-galeria/lit killah infografia 22.jpg" alt="Imagen 4">
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- ✅ MODAL CONTACTO -->
+  <div class="modal" id="modal-contacto">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Cerrar">&times;</button>
+      <h2>Contacto</h2>
+      <p>Podés escribirme a <strong>gabriel.visual2025@gmail.com</strong> o en Instagram <strong>@gabriel.visual2025</strong>.</p>
+    </div>
+  </div>
+
+  <!-- ✅ SCRIPT PRINCIPAL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const modals = document.querySelectorAll('.modal');
+      const buttons = document.querySelectorAll('.menu-box');
+      const closeBtns = document.querySelectorAll('.close-modal');
+
+      // Abrir modal
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-modal');
+          const modal = document.getElementById('modal-' + target);
+          if (modal) modal.classList.add('show');
+        });
+      });
+
+      // Cerrar modal
+      closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => btn.closest('.modal').classList.remove('show'));
+      });
+
+      // Cerrar clic afuera
+      window.addEventListener('click', e => {
+        modals.forEach(modal => { if (e.target === modal) modal.classList.remove('show'); });
+      });
+
+      // Escape
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') modals.forEach(modal => modal.classList.remove('show'));
+      });
+
+      // Si se abre desde un enlace con #proyectos, abrir el modal
+      if (window.location.hash === '#proyectos') {
+        const modal = document.getElementById('modal-proyectos');
+        if (modal) modal.classList.add('show');
+      }
+    });
+  </script>
+</body>
+</html>

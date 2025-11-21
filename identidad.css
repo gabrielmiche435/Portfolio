@@ -1,0 +1,334 @@
+/* ================================
+   ESTILOS BASE DE LA SUBPÁGINA
+================================ */
+
+.identity-body {
+  background: #111;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.identity-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+
+/* ================================
+   TITULARES PRINCIPALES
+================================ */
+
+.identity-header {
+  margin-bottom: 70px;
+  text-align: left;
+}
+
+.identity-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.identity-title span {
+  color: #4da6ff; /* detalle pro */
+}
+
+.identity-subtitle {
+  color: #ccc;
+  font-size: 1.1rem;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+
+/* ================================
+   HERO (imagen grande arriba)
+================================ */
+
+.identity-hero {
+  width: 100%;
+  margin: 50px 0;
+}
+
+.identity-hero img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  object-fit: cover;
+}
+
+
+/* ================================
+   SECCIONES STAR
+================================ */
+
+.identity-section {
+  margin: 90px 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-left: 18px;
+  border-left: 4px solid #fff;
+  letter-spacing: 0.5px;
+}
+
+.section-text {
+  font-size: 1.05rem;
+  color: #ddd;
+  line-height: 1.8;
+  max-width: 900px;
+}
+
+
+/* ================================
+   GALERÍAS DE IMÁGENES
+   (grandes, estilo Behance)
+================================ */
+
+.identity-gallery {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.identity-gallery img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.identity-gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(255,255,255,0.15);
+}
+
+
+/* ================================
+   BOTÓN PARA VER MANUAL PDF
+================================ */
+
+.manual-container {
+  text-align: center;
+  margin: 80px 0 40px;
+}
+
+.manual-btn {
+  background: #4da6ff;
+  padding: 15px 35px;
+  border-radius: 50px;
+  color: #111 !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.manual-btn:hover {
+  background: #76c0ff;
+  transform: translateY(-3px);
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .identity-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .identity-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .identity-container {
+    padding: 60px 18px;
+  }
+}
+/* ===========================================
+   GALERÍA INICIAL (Situación) – Tamaño igual
+=========================================== */
+
+.situation-gallery img {
+  width: 100%;
+  height: 300px;        /* 👈 Ajustá la altura si querés más rectangular o más cuadrada */
+  object-fit: cover;    /* Recorta sin deformar */
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.situation-gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(255,255,255,0.15);
+}
+/* Galería de Situación */
+.situation-gallery {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.situation-gallery img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.6);
+  transition: transform .3s ease, box-shadow .3s ease;
+  cursor: pointer;
+}
+
+.situation-gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(255,255,255,0.15);
+}
+.small-gallery img {
+  height: 350px;
+  object-fit: cover;
+}
+/* ================================
+   MOODBOARD - Mantener A4 completo
+================================ */
+
+.moodboard-container {
+  width: 100%;
+  max-width: 900px;      /* tamaño cómodo estilo Behance */
+  margin: 40px auto;
+}
+
+.moodboard-container img {
+  width: 100%;
+  height: auto;          /* mantiene proporción A4 */
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+.identity-image-full {
+  width: 100%;
+  max-width: 900px;      /* mismo ancho que el moodboard */
+  margin: 40px auto;     /* centrar */
+}
+
+.identity-image-full img {
+  width: 100%;
+  height: auto;          /* mantiene proporción */
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+/* ================================
+   GALERÍA DE RESULTADO (misma escala que moodboard y acción)
+================================ */
+
+.identity-result-gallery {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.identity-result-gallery img {
+  width: 100%;
+  height: 400px;            /* 👈 mismo tamaño visual que Acción */
+  object-fit: cover;        /* recorta sin deformar */
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.identity-result-gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(255,255,255,0.15);
+}
+/* ============================================================
+   RESULTADO – logos arriba + folleto abajo (estilo Behance)
+============================================================ */
+
+/* Fila superior: dos logos del mismo tamaño */
+.result-logos {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.result-logos img {
+  width: 100%;
+  height: 380px;       /* 👈 ajustable */
+  object-fit: contain; /* mantiene proporción, NO corta el logo */
+  background: #000;    /* mejora contraste en logos con fondo blanco */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.6);
+}
+
+/* FOLLETO A3 – ocupa 100% y respeta la proporción horizontal */
+.result-folleto {
+  margin-top: 50px;
+}
+
+.result-folleto img {
+  width: 100%;
+  height: auto;       /* mantiene proporción original A3 horizontal */
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.6);
+}
+/* ============================================================
+   RESULTADO – dos bloques separados para logos en una fila
+============================================================ */
+
+.result-logos {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 30px;
+}
+
+.logo-block {
+  background: #000;         /* fondo para generar contraste */
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.6);
+}
+
+.logo-block img {
+  width: 100%;
+  height: 320px;            /* ajusta si querés más alto */
+  object-fit: contain;      /* NO recorta logos */
+}
+
+/* FOLLETO A3 */
+.result-folleto {
+  margin-top: 50px;
+}
+
+.result-folleto img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.6);
+}

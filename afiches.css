@@ -1,0 +1,225 @@
+/* =============================== */
+/*           GENERAL               */
+/* =============================== */
+
+.afiches-body {
+  background: #0f0f0f;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.afiches-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 120px 0;
+}
+
+
+/* =============================== */
+/*           HERO / TITULO         */
+/* =============================== */
+
+.afiches-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.afiches-title span {
+  color: #36a3ff;
+}
+
+.afiches-subtitle {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin-bottom: 40px;
+}
+
+.afiches-hero img {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 50px;
+  display: block;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+
+/* =============================== */
+/*         SECCIONES STAR          */
+/* =============================== */
+
+.afiches-section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.section-text {
+  max-width: 900px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #dddddd;
+}
+
+
+/* =============================== */
+/*            GALERÍAS             */
+/* =============================== */
+
+.afiches-gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.afiches-gallery img {
+  width: calc(50% - 10px);
+  max-width: 420px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.afiches-image-full img {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+
+/* =============================== */
+/*         GRID DE 4 AFICHES       */
+/* =============================== */
+
+.afiches-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+  justify-items: center;
+  margin: 40px 0;
+}
+
+.afiches-grid-4 img {
+  width: 350px;   /* 🔹 Aca ajustás tamaño: subí a 380px si querés más grande */
+  height: 500px;  /* 🔹 Mantiene formato afiche */
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.afiches-grid-4 img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(0,0,0,0.6);
+}
+
+
+/* =============================== */
+/*         INFOGRAFÍA FINAL        */
+/* =============================== */
+
+.infografia-final img {
+  max-width: 900px;
+  margin: 50px auto;
+  display: block;
+  border-radius: 25px;
+}
+
+
+/* =============================== */
+/*         BOTÓN PDF               */
+/* =============================== */
+
+.manual-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.manual-btn {
+  display: inline-block;
+  background: #36a3ff;
+  padding: 18px 45px;
+  border-radius: 40px;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.manual-btn:hover {
+  background: #1c86e8;
+}
+
+
+/* =============================== */
+/*               MOBILE            */
+/* =============================== */
+
+@media (max-width: 600px) {
+  .afiches-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .afiches-grid-4 img {
+    width: 90%;
+    height: auto;
+  }
+}
+/* =============================== */
+/*      LIGHTBOX / ZOOM CLICK      */
+/* =============================== */
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.7);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+/* --- DESPLEGABLE DEL MÉTODO STAR --- */
+
+#star-content {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #1a1a1a;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.star-hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
