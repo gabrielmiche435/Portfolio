@@ -1,197 +1,77 @@
-/* BASE */
-.senaletica-body {
-  background: #111;
-  font-family: 'Poppins', sans-serif;
+body {
+  background: #0f0f0f;
   color: #fff;
   margin: 0;
-  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
-.senaletica-container {
-  max-width: 1200px;
+.identity-container {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 40px 20px;
 }
 
-
-/* HEADER */
-.senaletica-header {
-  margin-bottom: 70px;
-}
-
-.senaletica-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.senaletica-title span {
-  color: #4da6ff;
-}
-
-.senaletica-subtitle {
-  color: #ccc;
-  font-size: 1.1rem;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-
-/* HERO */
-.senaletica-hero img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+.identity-header {
+  text-align: center;
   margin-bottom: 40px;
 }
 
+.identity-title {
+  font-size: 42px;
+  font-weight: 600;
+}
 
-/* SECCIONES */
-.senaletica-section {
-  margin: 90px 0;
+.identity-title span {
+  color: #00c1ff;
+}
+
+.identity-subtitle {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.identity-hero img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 50px;
+}
+
+/* Secciones */
+
+.identity-section {
+  margin-bottom: 60px;
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 30px;
   margin-bottom: 20px;
-  padding-left: 18px;
-  border-left: 4px solid #fff;
+  font-weight: 600;
 }
 
 .section-text {
-  color: #ddd;
-  font-size: 1.05rem;
-  max-width: 900px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 30px;
 }
 
+/* Galerías */
 
-/* GALERÍAS */
-.senaletica-gallery {
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+.situation-gallery,
+.result-logos {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.senaletica-gallery img {
-  width: 100%;
-  height: 270px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.6);
-  transition: .3s;
+.situation-gallery img {
+  width: 30%;
+  min-width: 240px;
+  border-radius: 10px;
 }
 
-.senaletica-gallery img:hover {
-  transform: scale(1.02);
-}
-
-
-/* IMAGEN COMPLETA */
-.senaletica-image-full {
-  width: 100%;
-  max-width: 900px;
-  margin: 40px auto;
-}
-
-.senaletica-image-full img {
+.identity-image-full img {
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-}
-
-
-/* RESULTADO GALERÍA */
-.senaletica-result-gallery {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 25px;
-}
-
-.senaletica-result-gallery img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-  transition: .3s;
-}
-
-.senaletica-result-gallery img:hover {
-  transform: scale(1.02);
-}
-
-
-/* BOTÓN DE PDF */
-.manual-btn {
-  background: #4da6ff;
-  padding: 15px 35px;
-  border-radius: 50px;
-  color: #111 !important;
-  font-weight: 600;
-  display: inline-block;
-  margin-top: 40px;
-  transition: .3s;
-}
-
-.manual-btn:hover {
-  transform: translateY(-3px);
-}
-.signal-hero {
-  width: 100%;
-  margin: 50px 0;
-}
-
-.signal-hero img {
-  width: 100%;
-  height: 500px;        /* 👈 altura ideal estilo Behance */
-  object-fit: cover;    /* recorta sin deformar */
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-  display: block;
-}
-.task-image {
-  width: 100%;
-  max-width: 900px;
-  margin: 40px auto;
-}
-
-.task-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-  display: block;
-}
-/* GALERÍA RESULTADO – 2x2 */
-.senaletica-result-grid {
-  margin-top: 35px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-}
-
-.senaletica-result-grid img {
-  width: 100%;
-  height: 380px;        /* Ajustable */
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.senaletica-result-grid img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 15px 35px rgba(255,255,255,0.15);
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .senaletica-result-grid {
-    grid-template-columns: 1fr;
-  }
+  box-shadow: 0 0 25px rgba(0,0,0,0.45);
 }
